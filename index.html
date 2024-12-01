@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Benjamin Tjoa</title>
+    <link rel="icon" href="images/ico.ico" type="image/ico">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6Q6WCHWMK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T6Q6WCHWMK');
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background-color: #000000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #007AFF;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #FF2D55;
+        }
+        .btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 20px);
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .website-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .logo {
+            max-width: 50px;
+            margin-right: 15px;
+        }
+        .website-name {
+            font-size: 2em;
+            flex-grow: 1;
+        }
+        #donationForm {
+            display: none;
+        }
+        #idealForm {
+            display: none;
+        }
+        .thank-you {
+            color: #34C759;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .intro-text {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .ideal-btn {
+            background-color: #cc0066 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support Benjamin Tjoa</h1>
+        
+        <div class="intro-text">
+            Ik waardeer elke donatie enorm. Zelfs 20 cent kan het verschil maken en wordt met grote dankbaarheid ontvangen!
+        </div>
+
+        <div id="websiteSelection">
+            <h2>Kies een website voor donatie:</h2>
+            <div class="website-options">
+                <button onclick="selectWebsite('BenjaminTjoa.com')" class="btn">
+                    <div class="btn-content">
+                        <img src="https://www.benjamintjoa.com/images/ico.ico" alt="BenjaminTjoa.com Logo" class="logo">
+                        <span class="website-name">www.Benjamintjoa.com</span>
+                    </div>
+                </button>
+                <button onclick="selectWebsite('CodeCrafters.nl')" class="btn">
+                    <div class="btn-content">
+                        <img src="https://www.benjamintjoa.com/images/minecraft.png" alt="Mc.benjamintjoa.com Logo" class="logo">
+                        <span class="website-name">Mc.Benjamintjoa.com</span>
+                    </div>
+                </button>
+                <button onclick="selectWebsite('CodeCrafters.nl')" class="btn">
+                    <div class="btn-content">
+                        <img src="https://games.benjamintjoa.com/images/ico.ico" alt="Games.benjamintjoa.com Logo" class="logo">
+                        <span class="website-name">Games.Benjamintjoa.com</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div id="donationForm">
+            <div id="idealForm">
+                <h3>Kies je betaalmethode</h3>
+                <button onclick="redirectToTikkie()" class="btn ideal-btn">
+                    <div class="btn-content">
+                        <img src="https://d1twnm33rljaon.cloudfront.net/Archive/ideal-logo-1024.png" alt="iDEAL Logo" class="logo">
+                        <span class="website-name">Betaal met iDEAL</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div id="thankYouMessage" class="thank-you" style="display:none;">
+            Wat ontzettend lief dat je wilt doneren! Je wordt nu doorgestuurd...
+        </div>
+    </div>
+
+    <script>
+        function selectWebsite(website) {
+            document.getElementById('websiteSelection').style.display = 'none';
+            document.getElementById('donationForm').style.display = 'block';
+            document.getElementById('idealForm').style.display = 'block';
+        }
+
+        function redirectToTikkie() {
+            document.getElementById('idealForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'https://link.benjamintjoa.com/donatie';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
