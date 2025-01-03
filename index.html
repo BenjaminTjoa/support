@@ -103,6 +103,12 @@
         .ideal-btn {
             background-color: #cc0066 !important;
         }
+        .bitcoin-btn {
+            background-color: #F7931A !important;
+        }
+        .solana-btn {
+            background-color: #000000 !important;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +152,18 @@
                         <span class="website-name">Betaal met iDEAL</span>
                     </div>
                 </button>
+                <button onclick="redirectToBitcoin()" class="btn bitcoin-btn">
+                    <div class="btn-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="logo">
+                        <span class="website-name">Betaal met Bitcoin</span>
+                    </div>
+                </button>
+                <button onclick="redirectToSolana()" class="btn solana-btn">
+                    <div class="btn-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png" alt="Bitcoin Logo" class="logo">
+                        <span class="website-name">Betaal met Solana</span>
+                    </div>
+                </button>
             </div>
         </div>
 
@@ -166,6 +184,20 @@
             document.getElementById('thankYouMessage').style.display = 'block';
             setTimeout(() => {
                 window.location.href = 'https://link.benjamintjoa.com/donatie';
+            }, 2000);
+        }
+        function redirectToBitcoin() {
+            document.getElementById('idealForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'https://link.benjamintjoa.com/bitcoin';
+            }, 2000);
+        }
+        function redirectToSolana() {
+            document.getElementById('idealForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'https://link.benjamintjoa.com/solana';
             }, 2000);
         }
     </script>
